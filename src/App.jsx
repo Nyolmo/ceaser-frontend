@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// Import pages
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Activities from "./pages/Activities";
@@ -17,7 +17,7 @@ import Accommodations from "./pages/Accommodations";
 import Inquiries from "./pages/Inquiries";
 import NotFound from "./pages/NotFound";
 
-// Scroll to top on route change
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -26,7 +26,7 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Animation variants
+
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
   animate: { opacity: 1, y: 0 },
@@ -39,7 +39,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        {/* Home */}
+  
         <Route
           path="/"
           element={
@@ -55,7 +55,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* About */}
+
         <Route
           path="/about"
           element={
@@ -65,7 +65,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Activities */}
+
         <Route
           path="/activities"
           element={
@@ -75,7 +75,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Events */}
+ 
         <Route
           path="/events"
           element={
@@ -85,7 +85,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Gallery */}
+
         <Route
           path="/gallery"
           element={
@@ -95,7 +95,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Menu */}
+  
         <Route
           path="/menu"
           element={
@@ -105,7 +105,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Accommodations */}
+   
         <Route
           path="/accommodations"
           element={
@@ -115,7 +115,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Contact */}
+  
         <Route
           path="/contact"
           element={
@@ -125,7 +125,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Inquiries */}
+   
         <Route
           path="/inquiries"
           element={
@@ -135,7 +135,7 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* 404 */}
+
         <Route
           path="*"
           element={

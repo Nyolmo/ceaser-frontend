@@ -33,10 +33,10 @@ export default function Navbar() {
   return (
     <nav className="bg-[#0a2540] text-white shadow-lg sticky top-0 z-50 transition-all duration-300">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo + Site Name */}
+
         <Link to="/" className="flex items-center space-x-3">
           <img
-            src="/images/logo.jpg" // <-- your logo path
+            src="/images/logo.jpg" 
             alt="Caesar’s Resort Logo"
             className={`object-contain transition-all duration-300 ${
               scrolled ? "w-8 h-8" : "w-10 h-10"
@@ -51,7 +51,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
+ 
         <div className="hidden md:flex space-x-6">
           {navItems.map((item) => (
             <NavLink
@@ -68,7 +68,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
+ 
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-white hover:text-[#FBBF24]"
@@ -77,7 +77,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+
       {open && (
         <div className="md:hidden bg-[#0a2540] border-t border-gray-700">
           {navItems.map((item) => (

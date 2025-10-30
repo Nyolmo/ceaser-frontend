@@ -10,7 +10,7 @@ export default function ActivityModal({ activity, open, onClose }) {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // Focus first focusable in modal
+
     const focusable = containerRef.current?.querySelectorAll(
       'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
     );

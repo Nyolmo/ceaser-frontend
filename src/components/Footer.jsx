@@ -20,7 +20,7 @@ export default function Footer() {
     <footer className="relative bg-gray-950 text-gray-300 pt-14 pb-8 mt-24 border-t border-gray-800">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
 
-        {/* Resort Description */}
+
         <div>
           <h2 className="text-xl font-semibold text-white mb-3">
             Caesar’s Waterfront Resort
@@ -31,7 +31,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-lg font-medium text-white mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -55,7 +54,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Social Links */}
+
         <div className="flex flex-col items-center md:items-end">
           <h3 className="text-lg font-medium text-white mb-4">Connect With Us</h3>
           <div className="flex gap-4">
@@ -81,12 +80,12 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider & Copyright */}
+
       <div className="border-t border-gray-800 mt-12 pt-5 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Caesar’s Waterfront Resort — All rights reserved.
       </div>
 
-      {/* Smooth Scroll-To-Top Button */}
+
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
