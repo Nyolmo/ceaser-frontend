@@ -11,7 +11,7 @@ import EventCard from "../components/EventCard";
 export default function Home() {
   const [selectedDish, setSelectedDish] = useState(null);
 
-  // ✅ Safe fallbacks for undefined imports
+
   const activities = Array.isArray(activitiesData) ? activitiesData : [];
   const events = Array.isArray(eventsData) ? eventsData : [];
   const mains = menuData && Array.isArray(menuData.mains) ? menuData.mains : [];
@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <main className="bg-[#fdfaf6] text-[#0f1724]">
-      {/* --- HERO --- */}
+ 
       <section className="relative h-[78vh] md:h-[86vh] overflow-hidden">
         <div className="absolute inset-0">
           <video
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- ABOUT --- */}
+     
       <section className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- ACTIVITIES --- */}
+   
       <section id="experiences" className="container mx-auto px-6 py-12 bg-[#E0F2FE]/60 rounded-xl">
         <h3 className="text-2xl font-semibold text-[#0E7490] mb-6">Featured Experiences</h3>
         <div className="grid md:grid-cols-3 gap-6">
@@ -135,7 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- EVENTS --- */}
+
       <section className="container mx-auto px-6 py-12">
         <h3 className="text-2xl font-semibold text-[#0E7490] mb-6">Upcoming Events</h3>
         <div className="grid md:grid-cols-3 gap-6">
@@ -146,7 +146,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- MENU HIGHLIGHTS --- */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-[#0E7490] mb-10">
@@ -179,7 +178,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- POPUP MODAL --- */}
       <AnimatePresence>
         {selectedDish && (
           <motion.div
@@ -231,7 +229,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* --- INQUIRY CTA --- */}
+  
       <section className="container mx-auto px-6 py-12">
         <div className="rounded-2xl bg-[#0E7490] text-white p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
