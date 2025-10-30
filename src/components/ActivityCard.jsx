@@ -1,4 +1,4 @@
-// src/components/ActivityCard.jsx
+
 export default function ActivityCard({ activity, onSelect }) {
   if (!activity) return null;
 
