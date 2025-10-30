@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+
+:root{
+  --resort: #08BDB3;
+  --resort-dark: #07A89B;
+  --coral: #FF6B5F;
+  --midnight: #0b1720;
+}
