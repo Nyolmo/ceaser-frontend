@@ -1,6 +1,6 @@
-// src/pages/Activities.jsx
+
 import { useState } from "react";
-import activities from "../data/activities.js";
+import activities from "../data/activities";
 import ActivityCard from "../components/ActivityCard";
 import ActivityModal from "../components/ActivityModal";
 

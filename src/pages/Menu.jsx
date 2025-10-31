@@ -61,7 +61,7 @@ export default function MenuPage() {
         ))}
       </div>
 
-      {/* --- Enhanced Popup Modal --- */}
+  
       <AnimatePresence>
         {selectedItem && (
           <motion.div

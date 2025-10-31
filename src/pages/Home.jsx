@@ -51,7 +51,7 @@ export default function Home() {
             className="w-full h-full object-cover brightness-[0.65]"
             poster="/images/hero-fallback.jpg"
           >
-            <source src="/video/resort-hero.mp4" type="video/mp4" />
+            <source src="./video/resort-hero.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -116,7 +116,7 @@ export default function Home() {
 
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/images/hero.jpg"
+              src="./images/hero.jpg"
               alt="About Caesar's"
               className="w-full h-64 object-cover"
             />

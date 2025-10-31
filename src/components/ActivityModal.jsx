@@ -1,4 +1,4 @@
-// src/components/ActivityModal.jsx
+
 import { useEffect, useRef } from "react";
 import { waLink } from "../utils/whatsapp";
 
@@ -19,7 +19,7 @@ export default function ActivityModal({ activity, open, onClose }) {
     const onKey = (e) => {
       if (e.key === "Escape") onClose?.();
       if (e.key === "Tab") {
-        // basic focus trap
+
         const nodes = focusable;
         if (!nodes || nodes.length === 0) return;
         const first = nodes[0];
