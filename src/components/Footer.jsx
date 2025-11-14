@@ -68,7 +68,7 @@ export default function Footer() {
               <MessageCircle className="w-5 h-5" />
             </a>
             <a
-              href="https://facebook.com/caesarsresort"
+              href="https://web.facebook.com/caesarswaterfront/?_rdc=1&_rdr#"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-gray-800 hover:bg-blue-600 transition duration-300"

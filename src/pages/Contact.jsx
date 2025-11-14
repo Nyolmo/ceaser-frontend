@@ -8,13 +8,12 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // save locally
+   
     const store = JSON.parse(localStorage.getItem("inquiries") || "[]");
     store.unshift({ ...form, createdAt: new Date().toISOString() });
     localStorage.setItem("inquiries", JSON.stringify(store));
     setSaved(true);
 
-    // open whatsapp prefilled
     const text = encodeURIComponent(`Inquiry from ${form.name} (${form.phone})\n${form.message}`);
     window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
   }

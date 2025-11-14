@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import activitiesData from "../data/activities";
 import eventsData from "../data/event";
 import menuData from "../data/menu";
@@ -10,7 +11,6 @@ import EventCard from "../components/EventCard";
 
 export default function Home() {
   const [selectedDish, setSelectedDish] = useState(null);
-
 
   const activities = Array.isArray(activitiesData) ? activitiesData : [];
   const events = Array.isArray(eventsData) ? eventsData : [];
@@ -40,7 +40,23 @@ export default function Home() {
 
   return (
     <main className="bg-[#fdfaf6] text-[#0f1724]">
- 
+
+      <Helmet>
+        <title>Caesar’s Waterfront Resort – Lakeside Dining, Events & Unique Experiences</title>
+        <meta
+          name="description"
+          content="Discover lakeside luxury, signature meals, immersive outdoor experiences, and unforgettable events at Caesar’s Waterfront Resort."
+        />
+        <meta property="og:title" content="Caesar’s Waterfront Resort – Lakeside Dining, Events & Unique Experiences" />
+        <meta
+          property="og:description"
+          content="Serene lakeside escapes, fine dining, curated activities, and premium accommodations at Caesar’s Waterfront Resort."
+        />
+        <meta property="og:image" content="/images/logo.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="keywords" content="Caesar Waterfront Resort, lakeside resort Kenya, luxury resort Eldoret, activities, dining, events" />
+      </Helmet>
+    
       <section className="relative h-[78vh] md:h-[86vh] overflow-hidden">
         <div className="absolute inset-0">
           <video
@@ -48,6 +64,7 @@ export default function Home() {
             muted
             loop
             playsInline
+            aria-label="Lakeside resort hero video"
             className="w-full h-full object-cover brightness-[0.65]"
             poster="/images/hero-fallback.jpg"
           >
@@ -89,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-     
+
       <section className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -105,19 +122,20 @@ export default function Home() {
             </ul>
 
             <div className="mt-6">
-              <a
-                href="/contact"
+             
+              <Link
+                to="/contact"
                 className="inline-block bg-[#0E7490] text-white px-4 py-2 rounded-full"
               >
                 Plan Your Visit
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
               src="./images/hero.jpg"
-              alt="About Caesar's"
+              alt="Caesar’s Waterfront Resort lakeside view"
               className="w-full h-64 object-cover"
             />
           </div>
@@ -128,18 +146,21 @@ export default function Home() {
       <section id="experiences" className="container mx-auto px-6 py-12 bg-[#E0F2FE]/60 rounded-xl">
         <h3 className="text-2xl font-semibold text-[#0E7490] mb-6">Featured Experiences</h3>
         <div className="grid md:grid-cols-3 gap-6">
-          {featuredActivities.map((a) => <ActivityCard key={a.id} activity={a} />)}
+          {featuredActivities.map((a) => (
+            <ActivityCard key={a.id} activity={a} />
+          ))}
         </div>
         <div className="mt-6 text-center">
           <Link to="/activities" className="text-[#0E7490] underline">View all activities</Link>
         </div>
       </section>
 
-
       <section className="container mx-auto px-6 py-12">
         <h3 className="text-2xl font-semibold text-[#0E7490] mb-6">Upcoming Events</h3>
         <div className="grid md:grid-cols-3 gap-6">
-          {featuredEvents.map((e) => <EventCard key={e.id} event={e} />)}
+          {featuredEvents.map((e) => (
+            <EventCard key={e.id} event={e} />
+          ))}
         </div>
         <div className="mt-6 text-center">
           <Link to="/events" className="text-[#0E7490] underline">See all events</Link>
@@ -160,7 +181,11 @@ export default function Home() {
                 onClick={() => setSelectedDish(item)}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition"
               >
-                <img src={item.image} alt={item.title} className="w-full h-56 object-cover" />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-56 object-cover"
+                />
                 <div className="p-4">
                   <h3 className="text-xl font-semibold text-[#FBBF24]">{item.title}</h3>
                   <p className="text-gray-600 mt-2 line-clamp-2">{item.desc}</p>
@@ -178,6 +203,7 @@ export default function Home() {
         </div>
       </section>
 
+
       <AnimatePresence>
         {selectedDish && (
           <motion.div
@@ -192,7 +218,11 @@ export default function Home() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
             >
-              <img src={selectedDish.image} alt={selectedDish.title} className="w-full h-56 object-cover" />
+              <img
+                src={selectedDish.image}
+                alt={selectedDish.title}
+                className="w-full h-56 object-cover"
+              />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-[#0E7490]">{selectedDish.title}</h3>
                 <p className="text-gray-700 mt-3">{selectedDish.desc}</p>
@@ -229,7 +259,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-  
+
       <section className="container mx-auto px-6 py-12">
         <div className="rounded-2xl bg-[#0E7490] text-white p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
